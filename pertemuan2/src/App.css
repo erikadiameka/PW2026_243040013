@@ -1,0 +1,303 @@
+* { box-sizing: border-box; }
+
+:root {
+  font-family: "Segoe UI", Inter, system-ui, sans-serif;
+  color: #172033;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(100, 179, 255, .18), transparent 28rem),
+    radial-gradient(circle at 90% 80%, rgba(124, 92, 255, .12), transparent 30rem),
+    #f4f7fb;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button, input { font: inherit; }
+button { cursor: pointer; }
+
+.wadah {
+  width: min(1040px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 48px 0 64px;
+}
+
+.hero {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.label-modul {
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+
+.hero h1 {
+  margin: 7px 0 8px;
+  color: #111827;
+  font-size: clamp(32px, 5vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -.04em;
+}
+
+.hero p { margin: 0; color: #64748b; font-size: 16px; }
+
+.materi-pill {
+  padding: 10px 14px;
+  border: 1px solid #dbe7f5;
+  border-radius: 999px;
+  color: #35445f;
+  background: rgba(255,255,255,.85);
+  box-shadow: 0 5px 18px rgba(60, 78, 120, .08);
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.layout-dashboard {
+  display: grid;
+  grid-template-columns: minmax(270px, .72fr) minmax(0, 1.28fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.kartu {
+  border: 1px solid rgba(220, 227, 238, .92);
+  border-radius: 20px;
+  padding: 26px;
+  background: rgba(255,255,255,.96);
+  box-shadow: 0 18px 45px rgba(40, 55, 90, .08);
+}
+
+.kartu-judul {
+  margin: 0 0 7px;
+  color: #1f2937;
+  font-size: 18px;
+  letter-spacing: -.01em;
+}
+
+.deskripsi-kartu { margin: 0; color: #7a8497; font-size: 13px; }
+
+.angka-penghitung {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 150px;
+  margin: 24px auto 18px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #edf5ff, #fff);
+  border: 12px solid #f8fafc;
+  box-shadow: 0 12px 35px rgba(59, 130, 246, .16);
+}
+
+.angka-penghitung span {
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1;
+  color: #2563eb;
+}
+
+.angka-penghitung small { margin-top: 7px; color: #8490a5; }
+
+.pesan-state {
+  min-height: 38px;
+  margin: 0 0 16px;
+  text-align: center;
+  color: #94a0b4;
+  font-size: 13px;
+}
+
+.pesan-state.sukses {
+  color: #087b55;
+  font-weight: 700;
+}
+
+.aksi-penghitung { display: grid; grid-template-columns: 1fr auto; gap: 10px; }
+
+.tombol-primary, .tombol-reset {
+  height: 44px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.tombol-primary {
+  border: 0;
+  color: white;
+  background: linear-gradient(135deg, #397ef6, #2563eb);
+  box-shadow: 0 7px 16px rgba(37,99,235,.23);
+}
+
+.tombol-primary:hover { transform: translateY(-1px); }
+.tombol-reset { padding: 0 16px; border: 1px solid #dfe5ef; color: #64748b; background: white; }
+.tombol-reset:disabled { opacity: .45; cursor: not-allowed; }
+
+.ringkasan-progres {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.ringkasan-progres div:first-child { display: flex; align-items: baseline; gap: 6px; }
+.ringkasan-progres strong { font-size: 30px; color: #2563eb; }
+.ringkasan-progres span { color: #8490a5; font-size: 13px; }
+.persentase { color: #2563eb; font-weight: 800; }
+
+.progres {
+  height: 7px;
+  margin: 9px 0 22px;
+  overflow: hidden;
+  border-radius: 99px;
+  background: #edf1f7;
+}
+
+.progres span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #397ef6, #7c6cf2);
+  transition: width .3s ease;
+}
+
+.baris { display: flex; gap: 10px; }
+
+.input {
+  min-width: 0;
+  flex: 1;
+  height: 46px;
+  padding: 0 14px;
+  border: 1px solid #dde4ee;
+  border-radius: 10px;
+  outline: none;
+  color: #263247;
+  background: #fafbfc;
+}
+
+.input:focus {
+  border-color: #70a5ff;
+  box-shadow: 0 0 0 3px rgba(59,130,246,.1);
+  background: white;
+}
+
+.baris button {
+  width: 46px;
+  height: 46px;
+  border: 0;
+  border-radius: 10px;
+  color: white;
+  background: #2563eb;
+  font-size: 20px;
+}
+
+.baris button:disabled { opacity: .45; cursor: not-allowed; }
+.galat { margin: 7px 0 0; color: #dc2626; font-size: 12px; }
+
+.filter-list {
+  display: flex;
+  gap: 7px;
+  margin: 20px 0 12px;
+}
+
+.filter-list button {
+  padding: 7px 11px;
+  border: 0;
+  border-radius: 7px;
+  color: #7a8497;
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.filter-list button.aktif {
+  color: #2563eb;
+  background: #edf4ff;
+}
+
+.daftar { margin: 0; padding: 0; list-style: none; }
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 54px;
+  padding: 8px 6px;
+  border-bottom: 1px solid #eef1f5;
+}
+
+.item:last-child { border-bottom: 0; }
+.item-tugas { display: flex; flex: 1; align-items: center; gap: 11px; cursor: pointer; font-size: 14px; }
+.item-tugas input { position: absolute; opacity: 0; }
+
+.checkbox-custom {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  flex: 0 0 20px;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 6px;
+}
+
+.item-tugas input:checked + .checkbox-custom {
+  border-color: #2563eb;
+  background: #2563eb;
+}
+
+.item-tugas input:checked + .checkbox-custom::after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 3px;
+  width: 5px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.teks-selesai { color: #a0a8b7; text-decoration: line-through; }
+
+.hapus-item {
+  border: 0;
+  color: #cbd2de;
+  background: transparent;
+  font-size: 22px;
+}
+
+.hapus-item:hover { color: #ef4444; }
+.kosong { padding: 26px 0; color: #99a4b7; text-align: center; font-size: 13px; }
+
+.tombol-bersih {
+  width: 100%;
+  margin-top: 14px;
+  padding: 10px;
+  border: 0;
+  border-radius: 9px;
+  color: #e05252;
+  background: #fff2f2;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+@media (max-width: 760px) {
+  .wadah { width: min(100% - 24px, 620px); padding-top: 28px; }
+  .hero { align-items: flex-start; }
+  .materi-pill { display: none; }
+  .layout-dashboard { grid-template-columns: 1fr; }
+  .kartu-penghitung { order: -1; }
+}
+
+@media (max-width: 420px) {
+  .hero h1 { font-size: 34px; }
+  .kartu { padding: 20px; }
+  .filter-list { justify-content: space-between; }
+  .filter-list button { padding-inline: 8px; }
+}
